@@ -1,0 +1,2213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form id="aoaDet" diff="MOD" scope="custom:ALL">
+	<properties>
+		<finLayout>vertical</finLayout>
+		<finPageRecTitleType>page_num</finPageRecTitleType>
+		<finType>general</finType>
+	</properties>
+	<events>
+		<load access="extended" diff="MOD" scope="custom:ALL"/>
+		<validateForm access="extended" diff="MOD" scope="custom:ALL"/>
+	</events>
+	<extendedEvents>
+		<before_load access="extendable" diff="ADD" scope="custom:ALL"/>
+		<after_load access="extendable" diff="ADD" scope="custom:ALL"/>
+		<before_validateForm access="extendable" diff="ADD" scope="custom:ALL"/>
+		<after_validateForm access="extendable" diff="ADD" scope="custom:ALL"/>
+	</extendedEvents>
+	<sectiongroup id="sg_critSect1">
+		<properties>
+			<finLayout>vertical</finLayout>
+			<finType>criteria</finType>
+		</properties>
+		<section id="sc_critSect1" wbprotected="true">
+			<properties>
+				<finCollapsible wbprotected="true">false</finCollapsible>
+				<finExpand wbprotected="true">true</finExpand>
+				<finProgressiveDisclosure wbprotected="true">false</finProgressiveDisclosure>
+			</properties>
+			<subsection id="ss_critSect1" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">false</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow1" wbprotected="true">
+					<cell id="finCell9" wbprotected="true" colspan="2">
+						<FinAccountId id="acctId" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001251</finLabel>	<!-- A/c. ID -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finSVSVisible wbprotected="true">false</finSVSVisible>
+								<finSearcherAction type="searcher" wbprotected="true">acctAction</finSearcherAction>
+								<finValidationIndicator wbprotected="true">1</finValidationIndicator>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinAccountId>
+					</cell>
+				</row>
+			</subsection>
+			<subsection id="additional_subSec" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">false</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow60" wbprotected="true">
+					<cell id="finCell60" wbprotected="true" colspan="2">
+						<FinTextInput id="acctIdAdd" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinAccountId</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001251</finLabel>	<!-- A/c. ID -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+				</row>
+			</subsection>
+			<subsection id="ss_critSect2" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">false</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow33" wbprotected="true">
+					<cell id="finCell48" wbprotected="true">
+						<FinTextInputWithSearcher id="crncyCode" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinCrncyCode</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finExplodeVisible wbprotected="true">false</finExplodeVisible>
+								<finLabel wbprotected="true">FLT001159</finLabel>	<!-- CCY -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<events>
+								<validate/>
+							</events>
+						</FinTextInputWithSearcher>
+					</cell>
+					<cell id="finCell49" wbprotected="true">
+						<FinTextInputWithSearcher id="glSubheadCode" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinGLSubheadCodeAcid</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001217</finLabel>	<!-- General Ledger Subhead Code -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finSearcherAction type="searcher" wbprotected="true">getGLDetails</finSearcherAction>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<events>
+								<validate/>
+							</events>
+						</FinTextInputWithSearcher>
+					</cell>
+				</row>
+				<row id="finRow28" wbprotected="true">
+					<cell id="finCell57" wbprotected="true" colspan="2">
+						<FinTextInputWithSearcher id="schmCode" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinSchmCodeWithCriteria</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001415</finLabel>	<!-- Scheme Code -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finSearcherAction type="searcher" wbprotected="true">getSchmDetails</finSearcherAction>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInputWithSearcher>
+					</cell>
+				</row>
+			</subsection>
+		</section>
+		<footer wbprotected="true">
+			<left wbprotected="true">
+				<FinButton id="goBtn" wbprotected="true">
+					<properties>
+						<WFExitPoint wbprotected="true">false</WFExitPoint>
+						<finApplicableModes wbprotected="true">ADD,MODIFY,CANCEL,VERIFY</finApplicableModes>
+						<finButtonCategory wbprotected="true">criteriaAccept</finButtonCategory>
+						<finButtonType wbprotected="true">primary</finButtonType>
+						<finEnabled wbprotected="true">true</finEnabled>
+						<finLabel wbprotected="true">FBT000002</finLabel>	<!-- Go -->
+						<finVisible wbprotected="true">true</finVisible>
+					</properties>
+					<events>
+						<buttonClick access="extended" diff="MOD" scope="custom:ALL"/>
+						<buttonClick_ADD/>
+						<buttonClick_CANCEL/>
+						<buttonClick_MODIFY/>
+						<buttonClick_VERIFY/>
+					</events>
+					<extendedEvents>
+						<before_buttonClick access="extendable" diff="ADD" scope="custom:ALL"/>
+						<after_buttonClick access="extendable" diff="ADD" scope="custom:ALL"/>
+					</extendedEvents>
+				</FinButton>
+				<FinButton id="editBtn" wbprotected="true">
+					<properties>
+						<WFExitPoint wbprotected="true">false</WFExitPoint>
+						<finApplicableModes wbprotected="true">ADD,MODIFY,CANCEL,VERIFY</finApplicableModes>
+						<finButtonCategory wbprotected="true">general</finButtonCategory>
+						<finButtonType wbprotected="true">secondary</finButtonType>
+						<finEnabled wbprotected="true">true</finEnabled>
+						<finLabel wbprotected="true">FBT000003</finLabel>	<!-- Edit -->
+						<finVisible wbprotected="true">true</finVisible>
+					</properties>
+					<events>
+						<buttonClick/>
+						<buttonClick_ADD/>
+						<buttonClick_CANCEL/>
+						<buttonClick_MODIFY/>
+						<buttonClick_VERIFY/>
+					</events>
+				</FinButton>
+			</left>
+			<right wbprotected="true">
+			</right>
+		</footer>
+		<hidden wbprotected="true">
+			<FinHidden id="hid_solIdDesc" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="hid_funcCode" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="hid_schmType" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="hid_solId" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+		</hidden>
+	</sectiongroup>
+	<sectiongroup id="sg_DetSect1">
+		<properties>
+			<finLayout>vertical</finLayout>
+		</properties>
+		<section id="sc_DetSect1" wbprotected="true">
+			<properties>
+				<finCollapsible wbprotected="true">false</finCollapsible>
+				<finExpand wbprotected="true">true</finExpand>
+				<finProgressiveDisclosure wbprotected="true">false</finProgressiveDisclosure>
+			</properties>
+			<subsection id="ss_DetSect1" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">false</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow3" wbprotected="true">
+					<cell id="finCell5" wbprotected="true">
+						<FinText id="solId" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">string</finDataType>
+								<finLabel wbprotected="true">FLT001287</finLabel>	<!-- SOL ID -->
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+					<cell id="finCell6" wbprotected="true">
+						<FinText id="schmCodeLbl" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">string</finDataType>
+								<finLabel wbprotected="true">FLT001415</finLabel>	<!-- Scheme Code -->
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+				</row>
+				<row id="finRow4" wbprotected="true">
+					<cell id="finCell7" wbprotected="true">
+						<FinText id="crncyCodeLbl" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">string</finDataType>
+								<finLabel wbprotected="true">FLT001159</finLabel>	<!-- CCY -->
+								<finUseCrDrSign wbprotected="true">false</finUseCrDrSign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+					<cell id="finCell8" wbprotected="true">
+						<FinText id="glSubHeadCodeLbl" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">string</finDataType>
+								<finLabel wbprotected="true">FLT001217</finLabel>	<!-- General Ledger Subhead Code -->
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+				</row>
+				<row id="finRow6" wbprotected="true">
+					<cell id="finCell1" wbprotected="true">
+						<FinTextInput id="acctHeadName" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFirstName</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT007069</finLabel>	<!-- A/c. Head Name -->
+								<finMandatory wbprotected="true">true</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+					<cell id="finCell2" wbprotected="true">
+						<FinTextInput id="acctShortName" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinAcctShortName</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001700</finLabel>	<!-- A/c. Short Name -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finTextAlign wbprotected="true">left</finTextAlign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+				</row>
+				<row id="finRow7" wbprotected="true">
+					<cell id="finCell11" wbprotected="true">
+						<FinTextInputWithSearcher id="placeHolder" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinDDTrnsfrAcctPlaceHolder</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT007979</finLabel>	<!-- Placeholder -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInputWithSearcher>
+					</cell>
+					<cell id="finCell12" wbprotected="true">
+						<FinTextInputWithSearcher id="acctSuperId" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinInteractionWith</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT007070</finLabel>	<!-- A/c. Supervisor ID -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finSearcherAction type="searcher" wbprotected="true">getUserId</finSearcherAction>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInputWithSearcher>
+					</cell>
+				</row>
+				<row id="finRow8" wbprotected="true">
+					<cell id="finCell15" wbprotected="true">
+						<FinTextInputWithSearcher id="eschCrPlaceHldr" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinDDTrnsfrAcctPlaceHolder</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT010749</finLabel>	<!-- Escheatment Credit A/c. Placeholder -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInputWithSearcher>
+					</cell>
+					<cell id="finCell59" wbprotected="true">
+						<FinTextArea id="remks" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinwaiverRmks</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT004923</finLabel>	<!-- Remarks -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextArea>
+					</cell>
+				</row>
+				<row id="finRow81" wbprotected="true">
+					<cell id="finCell151" wbprotected="true">
+						<FinRadioButtonGroup id="asyncBal" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT014619</finLabel>	<!-- Asynchronous A/c. Balance Update -->
+								<finLayOut wbprotected="true">horizontal</finLayOut>
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finSelectedValue wbprotected="true">N</finSelectedValue>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<events>
+								<itemSelected/>
+							</events>
+							<FinRadioButton id="asyncBalY" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001233</finLabel>	<!-- Yes -->
+									<finValue wbprotected="true">Y</finValue>
+								</properties>
+							</FinRadioButton>
+							<FinRadioButton id="asyncBalN" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001501</finLabel>	<!-- No -->
+									<finValue wbprotected="true">N</finValue>
+								</properties>
+							</FinRadioButton>
+						</FinRadioButtonGroup>
+					</cell>
+					<cell id="finCell152" wbprotected="true">
+					</cell>
+				</row>
+			</subsection>
+			<subsection id="ss_acctInfo" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">true</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finTitle wbprotected="true">FSH000636</finTitle>	<!-- Account Information -->
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow11" wbprotected="true">
+					<cell id="finCell13" wbprotected="true">
+						<FinText id="totalCr" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">amount</finDataType>
+								<finLabel wbprotected="true">FLT006962</finLabel>	<!-- Total Credit -->
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+					<cell id="finCell14" wbprotected="true">
+						<FinText id="totalDb" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">amount</finDataType>
+								<finLabel wbprotected="true">FLT006934</finLabel>	<!-- Total Debit -->
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+				</row>
+				<row id="finRow9" wbprotected="true">
+					<cell id="finCell16" wbprotected="true">
+						<FinText id="curBalCr" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">amount</finDataType>
+								<finLabel wbprotected="true">FLT005169</finLabel>	<!-- Current Balance -->
+								<finUseCrDrSign wbprotected="true">true</finUseCrDrSign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+					<cell id="finCell17" wbprotected="true">
+						<FinText id="futureBal" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">amount</finDataType>
+								<finLabel wbprotected="true">FLT007071</finLabel>	<!-- Future Balance -->
+								<finUseCrDrSign wbprotected="true">true</finUseCrDrSign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+				</row>
+			</subsection>
+			<subsection id="ss_addtnlAcctInfo" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">true</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finTitle wbprotected="true">FSH001116</finTitle>	<!-- Additional Account Information -->
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow13" wbprotected="true">
+					<cell id="finCell18" wbprotected="true">
+						<FinTextInput id="acctReprtCode" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinAcctRptCode</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002312</finLabel>	<!-- A/c. Report Code -->
+								<finMandatory wbprotected="true">true</finMandatory>
+								<finTextAlign wbprotected="true">left</finTextAlign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+					<cell id="finCell19" wbprotected="true">
+						<FinComboBox id="acctClass" wbprotected="true">
+							<properties>
+								<finComboType wbprotected="true">dynamic</finComboType>
+								<finDataProviderId wbprotected="true">writeAcctClassifyCodes</finDataProviderId>
+								<finDefaultLoad wbprotected="true">true</finDefaultLoad>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT007072</finLabel>	<!-- A/c. Classification -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinComboBox>
+					</cell>
+				</row>
+				<row id="finRow10" wbprotected="true">
+					<cell id="finCell20" wbprotected="true">
+						<FinRadioButtonGroup id="sysOnlyAcct" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT007077</finLabel>	<!-- System Only A/c. -->
+								<finLayOut wbprotected="true">horizontal</finLayOut>
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finSelectedValue wbprotected="true">N</finSelectedValue>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<events>
+								<itemSelected/>
+							</events>
+							<FinRadioButton id="yesSel" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001233</finLabel>	<!-- Yes -->
+									<finValue wbprotected="true">Y</finValue>
+								</properties>
+							</FinRadioButton>
+							<FinRadioButton id="noSel" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001501</finLabel>	<!-- No -->
+									<finValue wbprotected="true">N</finValue>
+								</properties>
+							</FinRadioButton>
+						</FinRadioButtonGroup>
+					</cell>
+					<cell id="finCell21" wbprotected="true">
+						<FinRadioButtonGroup id="anyWhereTranAllwd" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT010956</finLabel>	<!-- Transactions Allowed Anywhere -->
+								<finLayOut wbprotected="true">horizontal</finLayOut>
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finSelectedValue wbprotected="true">N</finSelectedValue>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<FinRadioButton id="yesLbl" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001233</finLabel>	<!-- Yes -->
+									<finValue wbprotected="true">Y</finValue>
+								</properties>
+							</FinRadioButton>
+							<FinRadioButton id="noLbl" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001501</finLabel>	<!-- No -->
+									<finValue wbprotected="true">N</finValue>
+								</properties>
+							</FinRadioButton>
+						</FinRadioButtonGroup>
+					</cell>
+				</row>
+				<row id="finRow31" wbprotected="true">
+					<cell id="finCell52" wbprotected="true">
+						<FinRadioButtonGroup id="transFrmOthrSol" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT007075</finLabel>	<!-- Transaction from Other SOL Allowed -->
+								<finLayOut wbprotected="true">horizontal</finLayOut>
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finSelectedValue wbprotected="true">N</finSelectedValue>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<FinRadioButton id="yesTrans" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001233</finLabel>	<!-- Yes -->
+									<finValue wbprotected="true">Y</finValue>
+								</properties>
+							</FinRadioButton>
+							<FinRadioButton id="noTrans" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001501</finLabel>	<!-- No -->
+									<finValue wbprotected="true">N</finValue>
+								</properties>
+							</FinRadioButton>
+						</FinRadioButtonGroup>
+					</cell>
+					<cell id="finCell54" wbprotected="true">
+						<FinComboBox id="refAcctToSis" wbprotected="true">
+							<properties>
+								<finComboType wbprotected="true">static</finComboType>
+								<finDataProviderId wbprotected="true">writeRefAcctToSisCodes</finDataProviderId>
+								<finDefaultLoad wbprotected="true">true</finDefaultLoad>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT007074</finLabel>	<!-- Refresh A/c. Data to SIS -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinComboBox>
+					</cell>
+				</row>
+				<row id="finRow12" wbprotected="true">
+					<cell id="finCell22" wbprotected="true">
+						<FinRadioButtonGroup id="acctPartitioned" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001713</finLabel>	<!-- A/c. Partitioned -->
+								<finLayOut wbprotected="true">horizontal</finLayOut>
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finSelectedValue wbprotected="true">N</finSelectedValue>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<events>
+								<itemSelected/>
+							</events>
+							<FinRadioButton id="yesR" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001233</finLabel>	<!-- Yes -->
+									<finValue wbprotected="true">Y</finValue>
+								</properties>
+							</FinRadioButton>
+							<FinRadioButton id="noR" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001501</finLabel>	<!-- No -->
+									<finValue wbprotected="true">N</finValue>
+								</properties>
+							</FinRadioButton>
+						</FinRadioButtonGroup>
+					</cell>
+					<cell id="finCell23" wbprotected="true">
+						<FinComboBox id="acctPartType" wbprotected="true">
+							<properties>
+								<finComboType wbprotected="true">dynamic</finComboType>
+								<finDataProviderId wbprotected="true">writePartitionType</finDataProviderId>
+								<finDefaultLoad wbprotected="true">true</finDefaultLoad>
+								<finEditable wbprotected="true">false</finEditable>
+								<finLabel wbprotected="true">FLT006922</finLabel>	<!-- Partition Type -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinComboBox>
+					</cell>
+				</row>
+				<row id="finRow14" wbprotected="true">
+					<cell id="finCell28" wbprotected="true" colspan="2">
+						<FinRadioButtonGroup id="consolBal" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT007076</finLabel>	<!-- Consolidate Balance -->
+								<finLayOut wbprotected="true">horizontal</finLayOut>
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finSelectedValue wbprotected="true">N</finSelectedValue>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<FinRadioButton id="yesC" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001233</finLabel>	<!-- Yes -->
+									<finValue wbprotected="true">Y</finValue>
+								</properties>
+							</FinRadioButton>
+							<FinRadioButton id="noC" wbprotected="true">
+								<properties>
+									<finLabel wbprotected="true">FLT001501</finLabel>	<!-- No -->
+									<finValue wbprotected="true">N</finValue>
+								</properties>
+							</FinRadioButton>
+						</FinRadioButtonGroup>
+					</cell>
+				</row>
+				<row id="finRow15" wbprotected="true">
+					<cell id="finCell26" wbprotected="true">
+						<FinComboBox id="freezeCode" wbprotected="true">
+							<properties>
+								<finComboType wbprotected="true">static</finComboType>
+								<finDataProviderId wbprotected="true">writeFreezeCode</finDataProviderId>
+								<finDefaultLoad wbprotected="true">true</finDefaultLoad>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT003710</finLabel>	<!-- Freeze Code -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<events>
+								<valueChange/>
+							</events>
+						</FinComboBox>
+					</cell>
+					<cell id="finCell27" wbprotected="true">
+						<FinRefCategorySearcher id="freezeReason" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002708</finLabel>	<!-- Freeze Reason Code -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finRefCategoryType wbprotected="true">31</finRefCategoryType>
+								<finTextAlign wbprotected="true">left</finTextAlign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinRefCategorySearcher>
+					</cell>
+				</row>
+			</subsection>
+			<subsection id="ss_inquirySect" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">true</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finTitle wbprotected="true">FSH001144</finTitle>	<!-- Account Freeze Pending Details -->
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow29" wbprotected="true">
+					<cell id="finCell3" wbprotected="true">
+						<FinExplode id="explodePendOne" wbprotected="true">
+							<properties>
+								<finEnabled wbprotected="true">true</finEnabled>
+								<finExplodeAction wbprotected="true">pendInwDet</finExplodeAction>
+								<finExplodeId wbprotected="true">Pndiwcl</finExplodeId>
+								<finExplodeType wbprotected="true">uxmenugroup</finExplodeType>
+								<finIsModal wbprotected="true">true</finIsModal>
+								<finLabel wbprotected="true">FLT007419</finLabel>	<!-- Pending Inward Clearing Details -->
+							</properties>
+						</FinExplode>
+					</cell>
+					<cell id="finCell4" wbprotected="true">
+						<FinExplode id="explodePendTwo" wbprotected="true">
+							<properties>
+								<finEnabled wbprotected="true">true</finEnabled>
+								<finExplodeAction wbprotected="true">pendOnwDet</finExplodeAction>
+								<finExplodeId wbprotected="true">Iasb|inquiry</finExplodeId>
+								<finExplodeType wbprotected="true">uxmenu</finExplodeType>
+								<finIsModal wbprotected="true">true</finIsModal>
+								<finLabel wbprotected="true">FLT007420</finLabel>	<!-- Pending Outward Clearing Details -->
+							</properties>
+						</FinExplode>
+					</cell>
+				</row>
+				<row id="finRow2" wbprotected="true">
+					<cell id="finCell10" wbprotected="true">
+						<FinExplode id="explodePendThree" wbprotected="true">
+							<properties>
+								<finEnabled wbprotected="true">true</finEnabled>
+								<finExplodeAction wbprotected="true">pendTrnfrDet</finExplodeAction>
+								<finExplodeId wbprotected="true">Ift|inquiry</finExplodeId>
+								<finExplodeType wbprotected="true">uxmenu</finExplodeType>
+								<finIsModal wbprotected="true">true</finIsModal>
+								<finLabel wbprotected="true">FLT007421</finLabel>	<!-- Pending Transaction Details -->
+							</properties>
+						</FinExplode>
+					</cell>
+					<cell id="finCell51" wbprotected="true">
+						<FinExplode id="explodePendFour" wbprotected="true">
+							<properties>
+								<finEnabled wbprotected="true">true</finEnabled>
+								<finExplodeAction wbprotected="true">pendStdDet</finExplodeAction>
+								<finExplodeId wbprotected="true">Isgi|inquiry</finExplodeId>
+								<finExplodeType wbprotected="true">uxmenu</finExplodeType>
+								<finIsModal wbprotected="true">true</finIsModal>
+								<finLabel wbprotected="true">FLT002764</finLabel>	<!-- Pending Standing Instructions -->
+							</properties>
+						</FinExplode>
+					</cell>
+				</row>
+			</subsection>
+			<subsection id="ss_limitsSec" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">true</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finTitle wbprotected="true">FSH001070</finTitle>	<!-- Limits -->
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow18" wbprotected="true">
+					<cell id="finCell24" wbprotected="true">
+						<FinAmount id="cashLimitDr" wbprotected="true">
+							<properties>
+								<finCrncyReqd wbprotected="true">false</finCrncyReqd>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001987</finLabel>	<!-- Cash Limit (Dr.) -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinAmount>
+					</cell>
+					<cell id="finCell25" wbprotected="true">
+						<FinAmount id="cashLimitCr" wbprotected="true">
+							<properties>
+								<finCrncyReqd wbprotected="true">false</finCrncyReqd>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001988</finLabel>	<!-- Cash Limit (Cr.) -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinAmount>
+					</cell>
+				</row>
+				<row id="finRow16" wbprotected="true">
+					<cell id="finCell29" wbprotected="true">
+						<FinAmount id="clrLimitDr" wbprotected="true">
+							<properties>
+								<finCrncyReqd wbprotected="true">false</finCrncyReqd>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001989</finLabel>	<!-- Clearing Limit (Dr.) -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinAmount>
+					</cell>
+					<cell id="finCell30" wbprotected="true">
+						<FinAmount id="clrLimitCr" wbprotected="true">
+							<properties>
+								<finCrncyReqd wbprotected="true">false</finCrncyReqd>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001990</finLabel>	<!-- Clearing Limit (Cr.) -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinAmount>
+					</cell>
+				</row>
+				<row id="finRow17" wbprotected="true">
+					<cell id="finCell31" wbprotected="true">
+						<FinAmount id="transfrLimitDr" wbprotected="true">
+							<properties>
+								<finCrncyReqd wbprotected="true">false</finCrncyReqd>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001991</finLabel>	<!-- Transfer Limit (Dr.) -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinAmount>
+					</cell>
+					<cell id="finCell32" wbprotected="true">
+						<FinAmount id="transfrLimitCr" wbprotected="true">
+							<properties>
+								<finCrncyReqd wbprotected="true">false</finCrncyReqd>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001992</finLabel>	<!-- Transfer Limit (Cr.) -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinAmount>
+					</cell>
+				</row>
+				<row id="finRow19" wbprotected="true">
+					<cell id="finCell35" wbprotected="true" colspan="2">
+						<FinAmount id="balDebtLimit" wbprotected="true">
+							<properties>
+								<finCrncyReqd wbprotected="true">false</finCrncyReqd>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT007079</finLabel>	<!-- Balance Debit Limit -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinAmount>
+					</cell>
+				</row>
+			</subsection>
+			<subsection id="ss_freeTextSec" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">true</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finTitle wbprotected="true">FSH000088</finTitle>	<!-- Free Texts -->
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow22" wbprotected="true">
+					<cell id="finCell33" wbprotected="true">
+						<FinTextInput id="freeText1" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFreeText80WithIC</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002736</finLabel>	<!-- Free Text 1 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+					<cell id="finCell34" wbprotected="true">
+						<FinTextInput id="freeText2" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFreeText80WithIC</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002737</finLabel>	<!-- Free Text 2 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+				</row>
+				<row id="finRow20" wbprotected="true">
+					<cell id="finCell36" wbprotected="true">
+						<FinTextInput id="freeText3" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFreeText80WithIC</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002738</finLabel>	<!-- Free Text 3 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+					<cell id="finCell37" wbprotected="true">
+						<FinTextInput id="freeText4" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFreeText80WithIC</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002739</finLabel>	<!-- Free Text 4 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+				</row>
+				<row id="finRow21" wbprotected="true">
+					<cell id="finCell38" wbprotected="true">
+						<FinTextInput id="freeText5" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFreeText80WithIC</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002740</finLabel>	<!-- Free Text 5 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+					<cell id="finCell39" wbprotected="true">
+						<FinTextInput id="freeText6" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFreeText80WithIC</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002895</finLabel>	<!-- Free Text 6 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+				</row>
+				<row id="finRow23" wbprotected="true">
+					<cell id="finCell40" wbprotected="true">
+						<FinTextInput id="freeText7" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFreeText80WithIC</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002896</finLabel>	<!-- Free Text 7 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+					<cell id="finCell41" wbprotected="true">
+						<FinTextInput id="freeText8" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFreeText80WithIC</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002897</finLabel>	<!-- Free Text 8 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+				</row>
+				<row id="finRow24" wbprotected="true">
+					<cell id="finCell42" wbprotected="true">
+						<FinTextInput id="freeText9" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFreeText80WithIC</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002898</finLabel>	<!-- Free Text 9 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+					<cell id="finCell43" wbprotected="true">
+						<FinTextInput id="freeText10" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinFreeText80WithIC</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002899</finLabel>	<!-- Free Text 10 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+				</row>
+			</subsection>
+			<subsection id="ss_freeCodeSect" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">true</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finTitle wbprotected="true">FSH000087</finTitle>	<!-- Free Codes -->
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow27" wbprotected="true">
+					<cell id="finCell44" wbprotected="true">
+						<FinRefCategorySearcher id="freeCode1" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002275</finLabel>	<!-- Free Code 1 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finRefCategoryType wbprotected="true">XR</finRefCategoryType>
+								<finTextAlign wbprotected="true">left</finTextAlign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinRefCategorySearcher>
+					</cell>
+					<cell id="finCell45" wbprotected="true">
+						<FinRefCategorySearcher id="freeCode2" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002329</finLabel>	<!-- Free Code 2 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finRefCategoryType wbprotected="true">XS</finRefCategoryType>
+								<finTextAlign wbprotected="true">left</finTextAlign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinRefCategorySearcher>
+					</cell>
+				</row>
+				<row id="finRow25" wbprotected="true">
+					<cell id="finCell46" wbprotected="true">
+						<FinRefCategorySearcher id="freeCode3" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002268</finLabel>	<!-- Free Code 3 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finRefCategoryType wbprotected="true">XT</finRefCategoryType>
+								<finTextAlign wbprotected="true">left</finTextAlign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinRefCategorySearcher>
+					</cell>
+					<cell id="finCell47" wbprotected="true">
+						<FinRefCategorySearcher id="freeCode4" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002313</finLabel>	<!-- Free Code 4 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finRefCategoryType wbprotected="true">XU</finRefCategoryType>
+								<finTextAlign wbprotected="true">left</finTextAlign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinRefCategorySearcher>
+					</cell>
+				</row>
+				<row id="finRow26" wbprotected="true">
+					<cell id="finCell50" wbprotected="true" colspan="2">
+						<FinRefCategorySearcher id="freeCode5" wbprotected="true">
+							<properties>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002298</finLabel>	<!-- Free Code 5 -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finRefCategoryType wbprotected="true">XV</finRefCategoryType>
+								<finTextAlign wbprotected="true">left</finTextAlign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinRefCategorySearcher>
+					</cell>
+				</row>
+			</subsection>
+			<subsection id="ss_acctLblGridSec" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">true</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finTitle wbprotected="true">FSH001115</finTitle>	<!-- A/c. Label -->
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow123" wbprotected="true">
+					<cell id="finCell123" wbprotected="true" colspan="2">
+						<FinMessage id="gridMsg" wbprotected="true">
+							<properties>
+								<finCloseRequired wbprotected="true">true</finCloseRequired>
+								<finMessageType wbprotected="true">Tip</finMessageType>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinMessage>
+					</cell>
+				</row>
+				<row id="finRow30" wbprotected="true">
+					<cell id="finCell53" wbprotected="true" colspan="2">
+						<FinDataGrid id="acctLabelRec" wbprotected="true">
+							<properties>
+								<finAddMoreRecords wbprotected="true">true</finAddMoreRecords>
+								<finCopyAllowed wbprotected="true">false</finCopyAllowed>
+								<finCountDeleted wbprotected="true">false</finCountDeleted>
+								<finDataProviderId wbprotected="true">acctLblGrid</finDataProviderId>
+								<finDefaultSelection wbprotected="true">none</finDefaultSelection>
+								<finDeletable wbprotected="true">true</finDeletable>
+								<finEditable wbprotected="true">true</finEditable>
+								<finExpBtnVisible wbprotected="true">true</finExpBtnVisible>
+								<finFilterable wbprotected="true">true</finFilterable>
+								<finGridComputable wbprotected="true">false</finGridComputable>
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finMoreDetailsReqd wbprotected="true">false</finMoreDetailsReqd>
+								<finPageRecFormId wbprotected="true">aoaTblRec</finPageRecFormId>
+								<finPrintBtnVisible wbprotected="true">true</finPrintBtnVisible>
+								<finRefreshBtnEnable wbprotected="true">false</finRefreshBtnEnable>
+								<finSelColEnable wbprotected="true">true</finSelColEnable>
+								<finSelectionMode wbprotected="true">none</finSelectionMode>
+								<finTitle wbprotected="true">FTH000499</finTitle>	<!-- A/c. Label -->
+								<finType wbprotected="true">tablesummary</finType>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<events>
+								<addRecord/>
+								<editPgMrRecord/>
+							</events>
+							<coldef>
+								<FinDataGridColumn id="acctLabl" wbprotected="true">
+									<properties>
+										<finColType wbprotected="true">FinText</finColType>
+										<finDataFld wbprotected="true">acctLabel</finDataFld>
+										<finDataType wbprotected="true">string</finDataType>
+										<finDomainType wbprotected="true">FinAccountLabel</finDomainType>
+										<finEditable wbprotected="true">false</finEditable>
+										<finFilterable wbprotected="true">true</finFilterable>
+										<finMandatory wbprotected="true">false</finMandatory>
+										<finTitle wbprotected="true">FTC000243</finTitle>	<!-- A/c. Label -->
+										<finUseCrDrSign wbprotected="true">false</finUseCrDrSign>
+										<finVisible wbprotected="true">true</finVisible>
+									</properties>
+								</FinDataGridColumn>
+								<FinDataGridColumn id="acctLabelVal" wbprotected="true">
+									<properties>
+										<finColType wbprotected="true">FinText</finColType>
+										<finDataFld wbprotected="true">valofLabel</finDataFld>
+										<finDataType wbprotected="true">string</finDataType>
+										<finEditable wbprotected="true">false</finEditable>
+										<finFilterable wbprotected="true">true</finFilterable>
+										<finMandatory wbprotected="true">false</finMandatory>
+										<finTitle wbprotected="true">FTC000244</finTitle>	<!-- Label Value -->
+										<finUseCrDrSign wbprotected="true">false</finUseCrDrSign>
+										<finVisible wbprotected="true">true</finVisible>
+									</properties>
+								</FinDataGridColumn>
+								<FinDataGridColumn id="acctLblCookie" wbprotected="true">
+									<properties>
+										<finColType wbprotected="true">FinText</finColType>
+										<finDataFld wbprotected="true">cookieFld</finDataFld>
+										<finDataType wbprotected="true">string</finDataType>
+										<finEditable wbprotected="true">false</finEditable>
+										<finEnabled wbprotected="true">true</finEnabled>
+										<finFilterable wbprotected="true">true</finFilterable>
+										<finMandatory wbprotected="true">false</finMandatory>
+										<finUseCrDrSign wbprotected="true">false</finUseCrDrSign>
+										<finVisible wbprotected="true">false</finVisible>
+									</properties>
+								</FinDataGridColumn>
+							</coldef>
+						</FinDataGrid>
+					</cell>
+				</row>
+			</subsection>
+			<subsection id="ss_lastModSect" wbprotected="true">
+				<properties>
+					<finCollapsible wbprotected="true">false</finCollapsible>
+					<finEnabled wbprotected="true">true</finEnabled>
+					<finExpand wbprotected="true">true</finExpand>
+					<finVisible wbprotected="true">true</finVisible>
+				</properties>
+				<row id="finRow32" wbprotected="true">
+					<cell id="finCell56" wbprotected="true" colspan="2">
+						<FinText id="totModTime" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">string</finDataType>
+								<finLabel wbprotected="true">FLT010957</finLabel>	<!-- Total No. of Times Modified -->
+								<finUseCrDrSign wbprotected="true">false</finUseCrDrSign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+				</row>
+				<row id="c_finRow2" previousrow="finRow32" diff="ADD" scope="custom:ALL">
+					<cell id="c_finCell3" diff="ADD">
+						<FinRadioButtonGroup id="grididEnabled" diff="ADD">
+							<properties>
+								<finDefaultValue>No</finDefaultValue>
+								<finEditable>true</finEditable>
+								<finLabel>FLT005229</finLabel>	<!-- Grid Id Enabled -->
+								<finLayOut>horizontal</finLayOut>
+								<finMandatory>false</finMandatory>
+								<finSelectedValue>N</finSelectedValue>
+								<finVisible>true</finVisible>
+							</properties>
+							<events>
+								<itemSelected access="extendable" diff="ADD" scope="custom:ALL"/>
+							</events>
+							<FinRadioButton id="grididEnabled_yes" diff="ADD">
+								<properties>
+									<finLabel>FLT011281</finLabel>	<!-- Yes -->
+									<finValue>Y</finValue>
+								</properties>
+							</FinRadioButton>
+							<FinRadioButton id="grididEnabled_no" diff="ADD">
+								<properties>
+									<finLabel>FLT011282</finLabel>	<!-- No -->
+									<finValue>N</finValue>
+								</properties>
+							</FinRadioButton>
+						</FinRadioButtonGroup>
+					</cell>
+					<cell id="c_finCell4" diff="ADD">
+						<FinComboBox id="linkedType" diff="ADD">
+							<properties>
+								<finComboType>static</finComboType>
+								<finDataProviderId>writeLinkedType</finDataProviderId>
+								<finDefaultLoad>true</finDefaultLoad>
+								<finEditable>true</finEditable>
+								<finLabel>FLT018220</finLabel>	<!-- Linked Type -->
+								<finMandatory>false</finMandatory>
+								<finVisible>true</finVisible>
+							</properties>
+							<events>
+								<valueChange access="extendable" diff="ADD" scope="custom:ALL"/>
+							</events>
+						</FinComboBox>
+					</cell>
+				</row>
+				<row id="c_finRow1" previousrow="finRow32" diff="ADD" scope="custom:ALL">
+					<cell id="c_finCell1" diff="ADD">
+						<FinTextInputWithSearcher id="custCifId" diff="ADD">
+							<properties>
+								<finDomainType>FinCifId</finDomainType>
+								<finEditable>true</finEditable>
+								<finLabel>FLT001336</finLabel>	<!-- CIF ID -->
+								<finMandatory>false</finMandatory>
+								<finVisible>true</finVisible>
+							</properties>
+						</FinTextInputWithSearcher>
+					</cell>
+					<cell id="c_finCell2" diff="ADD">
+						<FinTextInputWithSearcher id="custAccountId" diff="ADD">
+							<properties>
+								<finDomainType>FinAAAccountId</finDomainType>
+								<finEditable>true</finEditable>
+								<finLabel>FLT009514</finLabel>	<!-- A/c. ID -->
+								<finMandatory>false</finMandatory>
+								<finTextAlign>left</finTextAlign>
+								<finVisible>true</finVisible>
+							</properties>
+						</FinTextInputWithSearcher>
+					</cell>
+				</row>
+			</subsection>
+		</section>
+		<footer wbprotected="true">
+			<left wbprotected="true">
+			</left>
+			<right wbprotected="true">
+			</right>
+		</footer>
+		<hidden wbprotected="true">
+			<FinHidden id="hid_curBalInd" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="hid_futBalInd" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="hid_genCookie" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="hid_acctPartSchmFlg" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="hid_acctLabelEntd" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">int</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="hid_fcfttCookie" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="hid_isFreeTxtEntd" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="curBal_hid" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="futBal_hid" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="casaTDModInstalled" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="iban" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+			<FinHidden id="autoVerify" wbprotected="true">
+				<properties>
+					<finDataType wbprotected="true">string</finDataType>
+					<finIgnoreUpperCase wbprotected="true">false</finIgnoreUpperCase>
+				</properties>
+			</FinHidden>
+		</hidden>
+	</sectiongroup>
+<code>
+<![CDATA[
+import com.infy.finacle.ui.form.FinForm;
+import com.infy.finacle.ui.usecase.FinUseCase;
+import com.infy.finacle.ui.components.base.*;
+import com.infy.finacle.ui.components.domain.*;
+import com.infy.finacle.ui.components.generic.*;
+public class aoaDet extends FinForm 
+{	
+	private FinRadioButtonGroup consolBal;
+	private FinHidden hid_futBalInd;
+	private FinHidden iban;
+	private FinHidden autoVerify;
+	private FinRadioButtonGroup asyncBal; 
+	private FinRadioButton asyncBalY;
+	private FinRadioButton asyncBalN; 
+	private FinRadioButton noTrans;  
+	private FinTextInput acctHeadName;
+	private FinMessage gridMsg;
+	private FinExplode explodePendOne;      
+	private FinRadioButton yesLbl;
+	private FinTextInputWithSearcher placeHolder;
+	private FinRadioButton noLbl;
+	private FinRadioButton yesC;
+	private FinTextInput freeText10;
+	private FinText futureBal;
+	private FinExplode explodePendFour;
+	private FinTextArea remks;
+	private FinRadioButton yesR;
+	private FinButton goBtn;
+	private FinText crncyCodeLbl;
+	private FinText glSubHeadCodeLbl;
+	private FinRadioButton yesSel;	
+	private FinRadioButtonGroup acctPartitioned;
+	private FinAmount transfrLimitCr;
+	private FinHidden hid_acctLabelEntd;
+	private FinHidden hid_curBalInd;
+	private FinRefCategorySearcher freezeReason;
+	private FinButton editBtn;
+	private FinTextInputWithSearcher glSubheadCode;
+	private FinHidden hid_schmType;
+	private FinHidden curBal_hid;
+	private FinAmount transfrLimitDr;
+	private FinRadioButton noSel;
+	private FinText totalCr;
+	private FinTextInputWithSearcher schmCode;
+	private FinText schmCodeLbl;	
+	private FinRadioButtonGroup sysOnlyAcct;
+	private FinText totModTime;
+	private FinHidden hid_genCookie;
+	private FinComboBox acctClass;
+	private FinText curBalCr;
+	private FinText totalDb;
+	private FinHidden hid_isFreeTxtEntd;
+	private FinExplode explodePendTwo;
+	private FinComboBox refAcctToSis;
+	private FinHidden hid_acctPartSchmFlg;
+	private FinHidden hid_solId;
+	private FinText solId;
+	private FinAmount clrLimitDr;
+	private FinRefCategorySearcher freeCode2;
+	private FinRefCategorySearcher freeCode1;
+	private FinRefCategorySearcher freeCode4;
+	private FinRefCategorySearcher freeCode3;
+	private FinRefCategorySearcher freeCode5;
+	private FinExplode explodePendThree;
+	private FinTextInputWithSearcher acctSuperId;
+	private FinTextInput acctReprtCode;
+	private FinRadioButton noC;
+	private FinRadioButton noR;	
+	private FinRadioButtonGroup transFrmOthrSol;
+	private FinTextInput acctShortName;	
+	private FinRadioButtonGroup anyWhereTranAllwd;
+	private FinHidden hid_funcCode;
+	private FinAmount clrLimitCr;
+	private FinTextInputWithSearcher eschCrPlaceHldr;
+	private FinHidden futBal_hid;
+	private FinHidden hid_fcfttCookie;
+	private FinTextInput freeText9;
+	private FinTextInput freeText6;
+	private FinTextInput freeText5;
+	private FinTextInput freeText8;
+	private FinTextInput freeText7;
+	private FinTextInput freeText2;
+	private FinTextInput freeText1;
+	private FinTextInput freeText4;
+	private FinTextInput freeText3;
+	private FinDataGrid acctLabelRec;
+	private FinComboBox freezeCode;
+	private FinAmount balDebtLimit;
+	private FinRadioButton yesTrans;
+	private FinTextInputWithSearcher crncyCode;
+	private FinAmount cashLimitCr;
+	private FinHidden hid_solIdDesc;
+	private FinComboBox acctPartType;
+	private FinAccountId acctId;
+	private FinAmount cashLimitDr;
+	private FinHidden casaTDModInstalled;
+	private FinTextInput acctIdAdd;
+	public void goBtn_buttonClick_ADD()
+	{
+		//@@BEGIN_goBtn_buttonClick_ADD
+		//TODO:Add code here
+		invokeServiceWithVal("goAdd","I","sg_critSect1");
+		//@@END_goBtn_buttonClick_ADD
+	}
+	public void goBtn_buttonClick_MODIFY()
+	{
+		//@@BEGIN_goBtn_buttonClick_MODIFY
+		//TODO:Add code here
+		invokeServiceWithVal("goModify","I","sg_critSect1");
+		//@@END_goBtn_buttonClick_MODIFY
+	}
+	public void goBtn_buttonClick_CANCEL()
+	{
+		//@@BEGIN_goBtn_buttonClick_CANCEL
+		//TODO:Add code here
+		invokeServiceWithVal("goCancel","I","sg_critSect1");
+		//@@END_goBtn_buttonClick_CANCEL
+	}
+	public void goBtn_buttonClick_VERIFY()
+	{
+		//@@BEGIN_goBtn_buttonClick_VERIFY
+		//TODO:Add code here
+		invokeServiceWithVal("goVerify","I","sg_critSect1");
+		//@@END_goBtn_buttonClick_VERIFY
+	}
+	public void acctPartitioned_itemSelected()
+		{
+	//@@BEGIN_acctPartitioned_itemSelected
+		//TODO:Add code here
+		if (acctPartitioned.finSelectedValue == "Y") {
+        acctPartType.finEditable = "true";
+        consolBal.finEditable = "false";
+		}
+		else {
+			   acctPartType.finEditable = "false";
+			   acctPartType.finSelectedValue="";    
+			    consolBal.finEditable = "true";
+		}
+		//@@END_acctPartitioned_itemSelected
+	}
+	public void editBtn_buttonClick_ADD()
+	{
+		//@@BEGIN_editBtn_buttonClick_ADD
+		//TODO:Add code here
+	    gridMsg.finVisible = "false";
+	    acctLabelRec.finMessageText="";  
+		acctIdAdd.finEditable = "true";
+		submitBtn.finEnabled = "false";
+		editBtn.finEnabled = "false";
+		goBtn.finEnabled = "true";
+		glSubheadCode.finEditable = "true";
+		crncyCode.finEditable = "true";
+		schmCode.finEditable = "true";
+		clearSubSectionFields("ss_DetSect1");
+		clearSubSectionFields("ss_acctInfo");
+		clearSubSectionFields("ss_addtnlAcctInfo");
+		clearSubSectionFields("ss_limitsSec");
+		clearSubSectionFields("ss_freeTextSec");
+		clearSubSectionFields("ss_freeCodeSect");
+		clearSubSectionFields("ss_acctLblGridSec");
+		clearSubSectionFields("ss_lastModSect");
+		FinDataProvider dp = getDataProviderId ("acctLblGrid");
+		dp.removeAllRows();  
+		clearErrors();  
+		disableContainer("sg_DetSect1");
+		hid_genCookie.finValue="";  
+		//@@END_editBtn_buttonClick_ADD
+	}
+	public void editBtn_buttonClick_MODIFY()
+	{
+		//@@BEGIN_editBtn_buttonClick_MODIFY
+		//TODO:Add code here
+		gridMsg.finVisible = "false";
+		acctLabelRec.finMessageText="";
+		acctId.finEditable = "true";
+		glSubheadCode.finEditable = "true";
+		crncyCode.finEditable = "true";
+		schmCode.finEditable = "true";
+		submitBtn.finEnabled = "false";
+		editBtn.finEnabled = "false";
+		goBtn.finEnabled = "true";
+		disableContainer("sg_DetSect1");
+		clearSubSectionFields("ss_DetSect1");
+		clearSubSectionFields("ss_acctInfo");
+		clearSubSectionFields("ss_addtnlAcctInfo");
+		clearSubSectionFields("ss_limitsSec");
+		clearSubSectionFields("ss_freeTextSec");
+		clearSubSectionFields("ss_freeCodeSect");
+		clearSubSectionFields("ss_acctLblGridSec");
+		clearSubSectionFields("ss_lastModSect");
+		clearErrors();
+		FinDataProvider dp = getDataProviderId ("acctLblGrid");
+		dp.removeAllRows(); 
+		hid_genCookie.finValue="";  
+		//@@END_editBtn_buttonClick_MODIFY
+	}
+	public void editBtn_buttonClick_CANCEL()
+	{
+		//@@BEGIN_editBtn_buttonClick_CANCEL
+		//TODO:Add code here
+		gridMsg.finVisible = "false";
+		acctLabelRec.finMessageText="";
+		acctId.finEditable = "true";
+		glSubheadCode.finEditable = "true";
+		crncyCode.finEditable = "true";
+		schmCode.finEditable = "true";
+		submitBtn.finEnabled = "false";
+		editBtn.finEnabled = "false";
+		goBtn.finEnabled = "true";
+		clearSubSectionFields("ss_DetSect1");
+		clearSubSectionFields("ss_acctInfo");
+		clearSubSectionFields("ss_addtnlAcctInfo");
+		clearSubSectionFields("ss_limitsSec");
+		clearSubSectionFields("ss_freeTextSec");
+		clearSubSectionFields("ss_freeCodeSect");
+		clearSubSectionFields("ss_acctLblGridSec");
+		clearSubSectionFields("ss_lastModSect");
+		clearErrors();
+		FinDataProvider dp = getDataProviderId ("acctLblGrid");
+		dp.removeAllRows();   
+		hid_genCookie.finValue="";   
+		//@@END_editBtn_buttonClick_CANCEL
+	}
+	public void editBtn_buttonClick_VERIFY()
+	{
+		//@@BEGIN_editBtn_buttonClick_VERIFY
+		//TODO:Add code here
+		gridMsg.finVisible = "false";
+		acctLabelRec.finMessageText="";    
+		acctId.finEditable = "true";
+		glSubheadCode.finEditable = "true";
+		crncyCode.finEditable = "true";
+		schmCode.finEditable = "true";
+		submitBtn.finEnabled = "false";
+		editBtn.finEnabled = "false";
+		goBtn.finEnabled = "true";
+		clearSubSectionFields("ss_DetSect1");
+		clearSubSectionFields("ss_acctInfo");
+		clearSubSectionFields("ss_addtnlAcctInfo");
+		clearSubSectionFields("ss_limitsSec");
+		clearSubSectionFields("ss_freeTextSec");
+		clearSubSectionFields("ss_freeCodeSect");
+		clearSubSectionFields("ss_acctLblGridSec");
+		clearSubSectionFields("ss_lastModSect");     
+		clearErrors();
+		FinDataProvider dp = getDataProviderId ("acctLblGrid");
+		dp.removeAllRows();
+		hid_genCookie.finValue="";       
+		//@@END_editBtn_buttonClick_VERIFY
+	}
+	public boolean glSubheadCode_validate(FinTextInputWithSearcher glSubheadCode)
+		{
+	//@@BEGIN_glSubheadCode_validate
+		//TODO:Add code here
+		if(hid_funcCode.finValue == "A" && glSubheadCode.finText == "" && schmCode.finText==""){        
+			glSubheadCode.setError($L("FER000568"));  
+			return false ;
+		}
+			return true;
+		//@@END_glSubheadCode_validate
+	}
+	public void sysOnlyAcct_itemSelected()
+		{
+	//@@BEGIN_sysOnlyAcct_itemSelected
+		//TODO:Add code here
+		if(sysOnlyAcct.finSelectedValue == "Y"){
+		anyWhereTranAllwd.finSelectedValue = "N";
+		anyWhereTranAllwd.finEditable = "false";
+		}
+		else {
+			anyWhereTranAllwd.finSelectedValue = "N";
+			anyWhereTranAllwd.finEditable = "true";
+		}
+		//@@END_sysOnlyAcct_itemSelected
+	}
+	public void aoaDet_load()
+		{
+	//@@BEGIN_aoaDet_load
+		//TODO:Add code here
+		submitBtn.finEnabled = "false";
+		editBtn.finEnabled = "false";
+		if(hid_funcCode.finValue == "A")
+		{
+			hideSubSection("ss_critSect1");
+		}
+		if(acctIdAdd.finText == "" && hid_funcCode.finValue =="A")
+		{
+			crncyCode.finText = $M("HOME_CRNCY_CODE");
+		}
+		hid_solId.finValue =  $M("CONTEXT_SOL_ID");
+		if(hid_funcCode.finValue == "M" || hid_funcCode.finValue == "C" || hid_funcCode.finValue == "V")
+		{
+			 hideSubSection("additional_subSec");
+		}
+		cashLimitDr.currencyCode = crncyCode.finText;
+		cashLimitCr.currencyCode = crncyCode.finText;
+		clrLimitDr.currencyCode = crncyCode.finText;
+		clrLimitCr.currencyCode = crncyCode.finText;
+		transfrLimitDr.currencyCode = crncyCode.finText;
+		transfrLimitCr.currencyCode = crncyCode.finText;
+		balDebtLimit.currencyCode = crncyCode.finText;
+		//@@END_aoaDet_load
+	}
+	public boolean aoaDet_validateForm()
+		{
+	//@@BEGIN_aoaDet_validateForm
+		//TODO:Add code here
+		if(acctPartitioned.finSelectedValue == "Y")
+		{
+			if (acctPartType.finSelectedValue == "") 
+			{
+				setErrorToComponent($L("FER000568"),"acctPartType");
+				//thisForm.setError($L("FER000568"));
+				return false ; 
+			}
+		}
+		if(freezeCode.finSelectedValue != "" && freezeReason.finText == "")
+		{
+			freezeReason.setError($L("FER000568"));
+			return false ; 
+		}	
+			return true;
+		//@@END_aoaDet_validateForm
+	}
+	public void acctLabelRec_addRecord()
+		{
+	//@@BEGIN_acctLabelRec_addRecord
+		//TODO:Add code here
+			acctLabel.finEditable = "true";
+			valofLabel.finEditable = "true";
+		//@@END_acctLabelRec_addRecord
+	}
+	public void acctLabelRec_editPgMrRecord()
+		{
+	//@@BEGIN_acctLabelRec_editPgMrRecord
+		//TODO:Add code here
+		if(cookieFld.finText == "" &&(hid_funcCode.finValue == "M" ||hid_funcCode.finValue == "A")){
+			acctLabel.finEditable = "true";
+			valofLabel.finEditable = "true";
+		}
+		else {  
+			acctLabel.finEditable = "false";
+			valofLabel.finEditable = "false";
+		}            
+		//@@END_acctLabelRec_editPgMrRecord
+	}
+	public void freezeCode_valueChange()
+		{
+	//@@BEGIN_freezeCode_valueChange
+		//TODO:Add code here
+		if(freezeCode.finSelectedValue == "")
+		{
+			freezeReason.finEditable = "false";
+			clearFields("freezeReason");
+		}
+		else {
+			freezeReason.finEditable = "true";
+		}
+		//@@END_freezeCode_valueChange
+	}
+	public boolean crncyCode_validate(FinTextInputWithSearcher crncyCode)
+		{
+	//@@BEGIN_crncyCode_validate
+		//TODO:Add code here
+		if(hid_funcCode.finValue == "A" && crncyCode.finText == ""){
+			crncyCode.setError($L("FER000568"));
+			return false ;
+		}
+			return true;
+		//@@END_crncyCode_validate
+	}
+	//@@BEGIN_USER_DEFINED_FUNCTIONS
+	public void goCancel_Failure(){
+		//@@Access=EXTENDABLE
+		acctId.finEditable = "true";
+    glSubheadCode.finEditable = "true";
+    crncyCode.finEditable = "true";
+    schmCode.finEditable = "true";
+    submitBtn.finEnabled = "false";
+    editBtn.finEnabled = "false";
+    goBtn.finEnabled = "true";
+	}
+	public void setGridMsg(){
+		//@@Access=EXTENDABLE
+		gridMsg.finVisible = "true";
+    acctLabelRec.finMessageText = "";
+    FinDataProvider dpTemp = getDataProviderId("acctLblGrid");
+    int gridSize = dpTemp.getSize();
+    if (!((hid_funcCode.finValue == "A") || (hid_funcCode.finValue == "M"))) {
+        acctLabelRec.finAddMoreRecords = "false";
+        if (gridSize != 0)
+            gridMsg.finMessageText = $L("FMG000120");
+        else
+            gridMsg.finVisible = "false";
+    } else {
+        if (gridSize != 0)
+            gridMsg.finMessageText = $L("FMG000438");
+        else
+            gridMsg.finMessageText = $L("FMG000238");
+    }
+	}
+	public String futureaddIndicator(String input){
+		//@@Access=EXTENDABLE
+		String output = "";
+    if (input != "") {
+        String[] temp;
+        temp = split(input, "|");
+        String amt = temp[0];
+        String curr = temp[1];
+        output = temp[1];
+        output = concat(output, " ");
+        output = concat(output, amt);
+        output = concat(output, " ");
+        if (hid_futBalInd.finValue == "C") {
+            String credit = $L("FLT003697");
+            output = concat(output, credit);
+        } else if (hid_futBalInd.finValue == "D") {
+            String debit = $L("FLT003698");
+            output = concat(output, debit);
+        }
+    }
+    return output;
+	}
+	public String addIndicator(String input){
+		//@@Access=EXTENDABLE
+		String output = "";
+    if (input != "") {
+        String[] temp;
+        temp = split(input, "|");
+        String amt = temp[0];
+        String curr = temp[1];
+        output = temp[1];
+        output = concat(output, " ");
+        output = concat(output, amt);
+        output = concat(output, " ");
+        if (hid_curBalInd.finValue == "C") {
+            String credit = $L("FLT003697");
+            output = concat(output, credit);
+        } else if (hid_curBalInd.finValue == "D") {
+            String debit = $L("FLT003698");
+            output = concat(output, debit);
+        }
+    }
+    return output;
+	}
+	public void goCancel_Success(){
+		//@@Access=EXTENDABLE
+		setGridMsg();
+    solId.finText = $M("CONTEXT_SOL_ID");
+    editBtn.finEnabled = "true";
+    goBtn.finEnabled = "false";
+    acctId.finEditable = "false";
+    glSubheadCode.finEditable = "false";
+    crncyCode.finEditable = "false";
+    schmCode.finEditable = "false";
+    glSubHeadCodeLbl.finText = glSubheadCode.finText;
+    schmCodeLbl.finText = schmCode.finText;
+    crncyCodeLbl.finText = crncyCode.finText;
+    submitBtn.finEnabled = "true";
+    acctLabelRec.finAddMoreRecords = "false";
+    hideSubSection("ss_inquirySect");
+    if (hid_schmType.finValue == "OSP") {
+        hideSubSection("ss_addtnlAcctInfo");
+        hideSubSection("ss_limitsSec");
+        hideSubSection("ss_freeCodeSect");
+        hideSubSection("ss_acctLblGridSec");
+    }
+    if (hid_schmType.finValue != "OSP") {
+        cashLimitDr.finMandatory = "true";
+        cashLimitCr.finMandatory = "true";
+        clrLimitCr.finMandatory = "true";
+        clrLimitDr.finMandatory = "true";
+        transfrLimitCr.finMandatory = "true";
+        transfrLimitDr.finMandatory = "true";
+        balDebtLimit.finMandatory = "true";
+        showSubSection("ss_addtnlAcctInfo");
+        showSubSection("ss_limitsSec");
+        showSubSection("ss_freeCodeSect");
+        showSubSection("ss_acctLblGridSec");
+    }
+    if (hid_futBalInd.finValue != 'N') {
+        futureBal.finVisible = "true";
+    }
+    /*  if (hid_curBalInd.finValue == 'C') {
+        curBalCr.finLabel = $L("FLT007100");
+    } else {
+        curBalCr.finLabel = $L("FLT007233");
+    }*/
+    //curBalCr.finText = addIndicator(curBal_hid.finValue);            
+    //futureBal.finText = futureaddIndicator(futBal_hid.finValue);            
+    amtFormat();
+	}
+	public void goAdd_Success(){
+		//@@Access=EXTENDABLE
+		setGridMsg();
+    solId.finText = $M("CONTEXT_SOL_ID");
+    editBtn.finEnabled = "true";
+    goBtn.finEnabled = "false";
+    acctIdAdd.finEditable = "false";
+    glSubheadCode.finEditable = "false";
+    crncyCode.finEditable = "false";
+    schmCode.finEditable = "false";
+    enableContainer("sg_DetSect1");
+    glSubHeadCodeLbl.finText = glSubheadCode.finText;
+    schmCodeLbl.finText = schmCode.finText;
+    crncyCodeLbl.finText = crncyCode.finText;
+    //disableFields("totalCr", "totalDb", "curBalCr", "futureBal");                                                                                                                                                                               
+    submitBtn.finEnabled = "true";
+    freezeReason.finEditable = "false";
+    hideSubSection("ss_acctInfo");
+    hideSubSection("ss_inquirySect");
+    if (hid_schmType.finValue == "OSP") {
+        hideSubSection("ss_addtnlAcctInfo");
+        hideSubSection("ss_limitsSec");
+        hideSubSection("ss_freeCodeSect");
+        hideSubSection("ss_acctLblGridSec");
+    }
+    if (hid_futBalInd.finValue != 'N') {
+        futureBal.finVisible = "true";
+    }
+    /*  if (hid_curBalInd.finValue == 'C') {
+        curBalCr.finLabel = $L("FLT007100");
+    } else {
+        curBalCr.finLabel = $L("FLT007233");
+    }*/
+    //curBalCr.finText = addIndicator(curBal_hid.finValue);            
+    //futureBal.finText = futureaddIndicator(futBal_hid.finValue);            
+    amtFormat();
+    if (hid_schmType.finValue != "OSP") {
+        cashLimitDr.finMandatory = "true";
+        cashLimitCr.finMandatory = "true";
+        clrLimitCr.finMandatory = "true";
+        clrLimitDr.finMandatory = "true";
+        transfrLimitCr.finMandatory = "true";
+        transfrLimitDr.finMandatory = "true";
+        balDebtLimit.finMandatory = "true";
+        showSubSection("ss_addtnlAcctInfo");
+        showSubSection("ss_limitsSec");
+        showSubSection("ss_freeCodeSect");
+        showSubSection("ss_acctLblGridSec");
+    }
+    if (!(hid_schmType.finValue == "OAB" || hid_schmType.finValue == "OAP")) {
+        acctPartitioned.finSelectedValue = "N";
+        acctPartitioned.finEditable = "false";
+        consolBal.finSelectedValue = "N";
+        consolBal.finEditable = "false";
+    }
+    if (hid_schmType.finValue != "OAB") {
+        sysOnlyAcct.finSelectedValue = "N";
+        sysOnlyAcct.finEditable = "false";
+    }
+    if (acctPartitioned.finSelectedValue == "Y") {
+        acctPartType.finEditable = "true";
+    }
+    if (hid_acctPartSchmFlg.finValue == 'P') {
+        acctPartitioned.finSelectedValue = "Y";
+        acctPartitioned.finEditable = "false";
+    }
+    if (hid_acctPartSchmFlg.finValue == 'N') {
+        acctPartitioned.finSelectedValue = "N";
+        acctPartType.finEditable = "false";
+        acctPartitioned.finEditable = "false";
+    }
+    if (hid_acctPartSchmFlg.finValue == 'B' || hid_acctPartSchmFlg.finValue == "") {
+        if (acctPartitioned.finSelectedValue != 'Y') {
+            acctPartitioned.finSelectedValue = "N";
+            acctPartType.finEditable = "false";
+        }
+    }
+    if (acctPartitioned.finSelectedValue == "Y") {
+        acctPartType.finEditable = "true";
+        consolBal.finEditable = "false";
+    } else {
+        acctPartType.finEditable = "false";
+        acctPartType.finSelectedValue = "";
+        consolBal.finEditable = "true";
+    }
+    if (sysOnlyAcct.finSelectedValue == "Y") {
+        anyWhereTranAllwd.finSelectedValue = "N";
+        anyWhereTranAllwd.finEditable = "false";
+    } else {
+        anyWhereTranAllwd.finEditable = "true";
+    }
+    if (freezeCode.finSelectedValue == "") {
+        freezeReason.finEditable = "false";
+        clearFields("freezeReason");
+    } else {
+        freezeReason.finEditable = "true";
+    }
+    totModTime.finText = "0";
+    casaTDModInstalled.finValue = $M("ENTERPRISE_CASA_TD");
+    if (casaTDModInstalled.finValue == "N") {
+        disableFields(eschCrPlaceHldr);
+    }
+	}
+	public void goVerify_Failure(){
+		//@@Access=EXTENDABLE
+		acctId.finEditable = "true";
+    glSubheadCode.finEditable = "true";
+    crncyCode.finEditable = "true";
+    schmCode.finEditable = "true";
+    submitBtn.finEnabled = "false";
+    editBtn.finEnabled = "false";
+    goBtn.finEnabled = "true";
+	}
+	public void goAdd_Failure(){
+		//@@Access=EXTENDABLE
+		acctIdAdd.finEditable = "true";
+    glSubheadCode.finEditable = "true";
+    crncyCode.finEditable = "true";
+    schmCode.finEditable = "true";
+    submitBtn.finEnabled = "false";
+    editBtn.finEnabled = "false";
+    goBtn.finEnabled = "true";
+	}
+	public void goVerify_Success(){
+		//@@Access=EXTENDABLE
+		setGridMsg();
+    solId.finText = $M("CONTEXT_SOL_ID");
+    editBtn.finEnabled = "true";
+    goBtn.finEnabled = "false";
+    acctId.finEditable = "false";
+    glSubheadCode.finEditable = "false";
+    crncyCode.finEditable = "false";
+    schmCode.finEditable = "false";
+    glSubHeadCodeLbl.finText = glSubheadCode.finText;
+    schmCodeLbl.finText = schmCode.finText;
+    crncyCodeLbl.finText = crncyCode.finText;
+    acctLabelRec.finAddMoreRecords = "false";
+    submitBtn.finEnabled = "true";
+    if (hid_schmType.finValue == "OSP") {
+        hideSubSection("ss_addtnlAcctInfo");
+        hideSubSection("ss_limitsSec");
+        hideSubSection("ss_freeCodeSect");
+        hideSubSection("ss_acctLblGridSec");
+        hideSubSection("ss_inquirySect");
+    }
+    if (hid_futBalInd.finValue != 'N') {
+        futureBal.finVisible = "true";
+    }
+    /*  if (hid_curBalInd.finValue == 'C') {
+        curBalCr.finLabel = $L("FLT007100");
+    } else {
+        curBalCr.finLabel = $L("FLT007233");
+    }*/
+    //curBalCr.finText = addIndicator(curBal_hid.finValue);            
+    //futureBal.finText = futureaddIndicator(futBal_hid.finValue);            
+    amtFormat();
+    if (!(hid_schmType.finValue == "OAB" || hid_schmType.finValue == "OAP")) {
+        acctPartitioned.finSelectedValue = "N";
+        acctPartitioned.finEditable = "false";
+        consolBal.finSelectedValue = "N";
+        consolBal.finEditable = "false";
+    }
+    if (hid_schmType.finValue != "OAB") {
+        sysOnlyAcct.finSelectedValue = "N";
+        sysOnlyAcct.finEditable = "false";
+    }
+    if (hid_schmType.finValue != "OSP") {
+        cashLimitDr.finMandatory = "true";
+        cashLimitCr.finMandatory = "true";
+        clrLimitCr.finMandatory = "true";
+        clrLimitDr.finMandatory = "true";
+        transfrLimitCr.finMandatory = "true";
+        transfrLimitDr.finMandatory = "true";
+        balDebtLimit.finMandatory = "true";
+        showSubSection("ss_addtnlAcctInfo");
+        showSubSection("ss_limitsSec");
+        showSubSection("ss_freeCodeSect");
+        showSubSection("ss_acctLblGridSec");
+    }
+	}
+	public void goModify_Success(){
+		//@@Access=EXTENDABLE
+		setGridMsg();
+    solId.finText = $M("CONTEXT_SOL_ID");
+    editBtn.finEnabled = "true";
+    goBtn.finEnabled = "false";
+    acctId.finEditable = "false";
+    glSubheadCode.finEditable = "false";
+    crncyCode.finEditable = "false";
+    schmCode.finEditable = "false";
+    glSubHeadCodeLbl.finText = glSubheadCode.finText;
+    schmCodeLbl.finText = schmCode.finText;
+    crncyCodeLbl.finText = crncyCode.finText;
+    enableContainer("sg_DetSect1");
+    submitBtn.finEnabled = "true";
+    acctClass.finEditable = "false";
+    freezeReason.finEditable = "false";
+    disableFields("totalCr", "totalDb", "curBalCr", "futureBal");
+    if (hid_schmType.finValue == "OSP") {
+        hideSubSection("ss_addtnlAcctInfo");
+        hideSubSection("ss_limitsSec");
+        hideSubSection("ss_freeCodeSect");
+        hideSubSection("ss_acctLblGridSec");
+        hideSubSection("ss_inquirySect");
+    }
+    if (hid_futBalInd.finValue != 'N') {
+        futureBal.finVisible = "true";
+    }
+    /*  if (hid_curBalInd.finValue == 'C') {
+        curBalCr.finLabel = $L("FLT007100");
+    } else {
+        curBalCr.finLabel = $L("FLT007233");
+    }*/
+    //curBalCr.finText = addIndicator(curBal_hid.finValue);            
+    //futureBal.finText = futureaddIndicator(futBal_hid.finValue);            
+    amtFormat();
+    /* if (acctPartitioned.finSelectedValue == "Y") {
+        acctPartType.finEditable = "true";
+    }*/
+    if (acctPartitioned.finSelectedValue == "Y") {
+        acctPartType.finEditable = "true";
+        consolBal.finEditable = "false";
+    } else {
+        acctPartType.finEditable = "false";
+        acctPartType.finSelectedValue = "";
+        consolBal.finEditable = "true";
+    }
+    if (hid_schmType.finValue != "OSP") {
+        cashLimitDr.finMandatory = "true";
+        cashLimitCr.finMandatory = "true";
+        clrLimitCr.finMandatory = "true";
+        clrLimitDr.finMandatory = "true";
+        transfrLimitCr.finMandatory = "true";
+        transfrLimitDr.finMandatory = "true";
+        balDebtLimit.finMandatory = "true";
+        showSubSection("ss_addtnlAcctInfo");
+        showSubSection("ss_limitsSec");
+        showSubSection("ss_freeCodeSect");
+        showSubSection("ss_acctLblGridSec");
+    }
+    if (!(hid_schmType.finValue == "OAB" || hid_schmType.finValue == "OAP")) {
+        acctPartitioned.finSelectedValue = "N";
+        acctPartitioned.finEditable = "false";
+        consolBal.finSelectedValue = "N";
+        consolBal.finEditable = "false";
+    }
+    if (hid_schmType.finValue != "OAB") {
+        sysOnlyAcct.finSelectedValue = "N";
+        sysOnlyAcct.finEditable = "false";
+    } else
+        sysOnlyAcct.finEditable = "true";
+    if (sysOnlyAcct.finSelectedValue == "Y") {
+        anyWhereTranAllwd.finSelectedValue = "N";
+        anyWhereTranAllwd.finEditable = "false";
+    } else {
+        anyWhereTranAllwd.finEditable = "true";
+    }
+    if (freezeCode.finSelectedValue == "") {
+        freezeReason.finEditable = "false";
+        clearFields("freezeReason");
+    } else {
+        freezeReason.finEditable = "true";
+    }
+    casaTDModInstalled.finValue = $M("ENTERPRISE_CASA_TD");
+    if (casaTDModInstalled.finValue == "N") {
+        disableFields(eschCrPlaceHldr);
+    }
+	}
+	public void goModify_Failure(){
+		//@@Access=EXTENDABLE
+		acctId.finEditable = "true";
+    glSubheadCode.finEditable = "true";
+    crncyCode.finEditable = "true";
+    schmCode.finEditable = "true";
+    submitBtn.finEnabled = "false";
+    editBtn.finEnabled = "false";
+    goBtn.finEnabled = "true";
+	}
+	public void amtFormat(){
+		//@@Access=EXTENDABLE
+		if (hid_curBalInd.finValue == "D") {
+        float amnt = 0.00;
+        String tranAmt = curBalCr.finText;
+        String[] temp = split(tranAmt, "|");
+        int strLen = length(temp[0]);
+        String st = subString(temp[0], strLen - 2, strLen);
+        String st1 = subString(temp[0], 0, strLen - 3);
+        String st2 = st1 + "." + st;
+        amnt = (parseFloat(st2)) * (-1);
+        curBalCr.finText = amnt + "|" + temp[1];
+    }
+    if (hid_futBalInd.finValue == "D") {
+        float amnt1 = 0.00;
+        String tranAmt1 = futureBal.finText;
+        String[] temp1 = split(tranAmt1, "|");
+        int strLen1 = length(temp1[0]);
+        String st1 = subString(temp1[0], strLen1 - 2, strLen1);
+        String st11 = subString(temp1[0], 0, strLen1 - 3);
+        String st21 = st11 + "." + st1;
+        amnt1 = (parseFloat(st21)) * (-1);
+        futureBal.finText = amnt1 + "|" + temp1[1];
+    }
+	}
+	//@@END_USER_DEFINED_FUNCTIONS
+}]]>
+</code>
+<code scope="custom:ALL">
+<![CDATA[
+ 
+	
+	   
+import com.infy.finacle.ui.form.FinForm;
+import com.infy.finacle.ui.usecase.FinUseCase;
+import com.infy.finacle.ui.components.base.*;
+import com.infy.finacle.ui.components.domain.*;
+import com.infy.finacle.ui.components.generic.*;	    
+public class aoaDet extends FinForm 
+{
+	private FinRadioButton grididEnabled_no;
+	private FinTextInputWithSearcher custAccountId;
+	private FinRadioButtonGroup grididEnabled;
+	private FinTextInputWithSearcher custCifId;
+	private FinComboBox linkedType;
+	private FinRadioButton grididEnabled_yes;
+	public void grididEnabled_itemSelected()
+	{
+		//@@BEGIN_grididEnabled_itemSelected
+		//@@Access=extendable;
+		//TODO:Add code here
+	
+	if(grididEnabled.finSelectedValue == "Y")    //1.3
+		{
+			freeText1.finVisible= "true";
+			freeText1.finMandatory="true";
+			freeText1.finValue = grididEnabled.finSelectedValue;
+		}
+		else
+			{
+			freeText1.finMandatory="false";
+			freeText1.finVisible= "false";
+			}
+	
+	
+	
+		//@@END_grididEnabled_itemSelected
+	}
+	public void before_aoaDet_load()
+	{
+		//@@BEGIN_before_aoaDet_load
+		//@@Access=extendable;
+		//TODO:Add code here
+	
+		//@@END_before_aoaDet_load
+	}
+	public void after_aoaDet_load()
+	{
+		//@@BEGIN_after_aoaDet_load
+		//@@Access=extendable;
+		//TODO:Add code here
+	
+	
+	
+			registerComponentsLabel("freeText1",$L("FLT005230")); //1.3
+		
+		//freeText1.finDataType = "string";
+		//freeText1.finMaxChars = 15;
+		
+		
+			freeText10.finVisible="false";    //1.4
+	
+		//@@END_after_aoaDet_load
+	}
+	public boolean before_aoaDet_validateForm()
+	{
+		//@@BEGIN_before_aoaDet_validateForm
+		//@@Access=extendable;
+		//TODO:Add code here
+		return true;
+		//@@END_before_aoaDet_validateForm
+	}
+	public boolean after_aoaDet_validateForm()
+	{
+		//@@BEGIN_after_aoaDet_validateForm
+		//@@Access=extendable;
+		//TODO:Add code here
+		
+		freeText10.finValue=grididEnabled.finSelectedValue;  //1.5
+		return true;
+		
+		
+		return true;
+		//@@END_after_aoaDet_validateForm
+	}
+	public void linkedType_valueChange()
+	{
+		//@@BEGIN_linkedType_valueChange
+		//@@Access=extendable;
+		//TODO:Add code here
+	
+																//2.2
+	
+		if(linkedType.finSelectedValue=="A")       
+		{
+		custCifId.finVisible="false";   
+			custAccountId.finVisible="true";
+			custCifId.finValue = "";
+		}
+		else
+		{
+		custCifId.finVisible="true";   
+			custAccountId.finVisible="false";
+			custAccountId.finValue = "";
+		}
+	
+		//@@END_linkedType_valueChange
+	}
+
+	
+						
+
+	public void before_goBtn_buttonClick()
+	{
+		//@@BEGIN_before_goBtn_buttonClick
+		//@@Access=extendable;
+		//TODO:Add code here
+	
+		//@@END_before_goBtn_buttonClick
+	}
+
+	
+						
+
+	public void after_goBtn_buttonClick()
+	{
+		//@@BEGIN_after_goBtn_buttonClick
+		//@@Access=extendable;
+		//TODO:Add code here
+	
+	
+	if(schmCode.finValue== "ASSET")
+		{
+		grididEnabled.finSelectedValue="Y";
+		schmCode.finEnabled="false";
+		}
+	
+		//@@END_after_goBtn_buttonClick
+	}
+		//@@BEGIN_USER_DEFINED_FUNCTIONS
+	//@@END_USER_DEFINED_FUNCTIONS
+}]]>
+</code>
+</form>

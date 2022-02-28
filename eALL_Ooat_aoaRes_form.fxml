@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form id="aoaRes">
+	<properties>
+		<finLayout>vertical</finLayout>
+		<finPageRecTitleType>page_num</finPageRecTitleType>
+		<finType>general</finType>
+	</properties>
+	<events>
+		<load/>
+	</events>
+	<sectiongroup id="aoaRes_finSectionGroup1">
+		<section id="aoaRes_finSection1" wbprotected="true">
+			<properties>
+				<finCollapsible wbprotected="true">false</finCollapsible>
+				<finExpand wbprotected="true">true</finExpand>
+				<finProgressiveDisclosure wbprotected="true">false</finProgressiveDisclosure>
+			</properties>
+			<subsection id="aoaRes_finSubSection1" wbprotected="true">
+				<row id="finRow1" wbprotected="true">
+					<cell id="finCell5" wbprotected="true" colspan="2">
+						<FinMessage id="resMsg" wbprotected="true">
+							<properties>
+								<finCloseRequired wbprotected="true">false</finCloseRequired>
+								<finMessageType wbprotected="true">Success</finMessageType>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinMessage>
+					</cell>
+				</row>
+				<row id="finRow2" wbprotected="true">
+					<cell id="finCell3" wbprotected="true">
+						<FinText id="acctIdSum" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">string</finDataType>
+								<finLabel wbprotected="true">FLT001251</finLabel>	<!-- A/c. ID -->
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+					<cell id="finCell4" wbprotected="true">
+						<FinText id="acctIban" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">string</finDataType>
+								<finLabel wbprotected="true">FLT001714</finLabel>	<!-- IBAN -->
+								<finVisible wbprotected="true">false</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+				</row>
+			</subsection>
+		</section>
+		<footer wbprotected="true">
+			<left wbprotected="true">
+				<FinButton id="repBtn" wbprotected="true">
+					<properties>
+						<WFExitPoint wbprotected="true">false</WFExitPoint>
+						<finApplicableModes wbprotected="true">ADD,MODIFY,VERIFY,CANCEL</finApplicableModes>
+						<finButtonCategory wbprotected="true">general</finButtonCategory>
+						<finButtonType wbprotected="true">secondary</finButtonType>
+						<finEnabled wbprotected="true">true</finEnabled>
+						<finLabel wbprotected="true">FBT000007</finLabel>	<!-- Repeat Task -->
+						<finVisible wbprotected="true">true</finVisible>
+					</properties>
+					<events>
+						<buttonClick/>
+						<buttonClick_ADD/>
+						<buttonClick_CANCEL/>
+						<buttonClick_MODIFY/>
+						<buttonClick_VERIFY/>
+					</events>
+				</FinButton>
+			</left>
+			<right wbprotected="true">
+			</right>
+		</footer>
+		<hidden wbprotected="true">
+		</hidden>
+	</sectiongroup>
+<code>
+<![CDATA[
+import com.infy.finacle.ui.form.FinForm;
+import com.infy.finacle.ui.usecase.FinUseCase;
+import com.infy.finacle.ui.components.base.*;
+import com.infy.finacle.ui.components.domain.*;
+import com.infy.finacle.ui.components.generic.*;
+public class aoaRes extends FinForm 
+{
+	private FinText acctIdSum;
+	private FinMessage resMsg;
+	private FinButton repBtn;
+	private FinText acctIban;
+
+
+	public void aoaRes_load()
+	{
+		autoVerify.finValue = getIsAutoVrfy();
+        if (hid_funcCode.finValue == "M" || hid_funcCode.finValue == "C")
+        {
+            acctIban.finVisible = "false";
+        }
+	
+		if (hid_funcCode.finValue == "V")
+		{
+			acctIban.finVisible = "true";
+		}
+		
+        if (hid_funcCode.finValue == "A" && autoVerify.finValue == "Y")
+        {
+			acctIban.finText = iban.finValue;
+        	acctIban.finVisible = "true";
+        }
+	}	
+				
+	public void repBtn_buttonClick_ADD()
+	{
+		//@@BEGIN_repBtn_buttonClick_ADD
+		//TODO:Add code here
+		reLoad(false);
+		//@@END_repBtn_buttonClick_ADD
+	}
+	
+	
+				
+	public void repBtn_buttonClick_MODIFY()
+	{
+		//@@BEGIN_repBtn_buttonClick_MODIFY
+		//TODO:Add code here
+		reLoad(false);
+		//@@END_repBtn_buttonClick_MODIFY
+	}
+	
+	
+				
+	public void repBtn_buttonClick_VERIFY()
+	{
+		//@@BEGIN_repBtn_buttonClick_VERIFY
+		//TODO:Add code here
+		reLoad(false);
+		//@@END_repBtn_buttonClick_VERIFY
+	}
+	
+	
+				
+	public void repBtn_buttonClick_CANCEL()
+	{
+		//@@BEGIN_repBtn_buttonClick_CANCEL
+		//TODO:Add code here
+		reLoad(false);
+		//@@END_repBtn_buttonClick_CANCEL
+	}
+	
+	
+	
+	//@@BEGIN_USER_DEFINED_FUNCTIONS
+	public void aoaRes_load(){
+		//@@Access=EXTENDABLE
+		autoVerify.finValue = getIsAutoVrfy();
+    if (hid_funcCode.finValue == "M" || hid_funcCode.finValue == "C") {
+        acctIban.finVisible = "false";
+    }
+    if (hid_funcCode.finValue == "V") {
+        acctIban.finVisible = "true";
+    }
+    if (hid_funcCode.finValue == "A" && autoVerify.finValue == "Y") {
+        acctIban.finText = iban.finValue;
+        acctIban.finVisible = "true";
+    }
+	}
+	//@@END_USER_DEFINED_FUNCTIONS
+
+}]]>
+</code>
+<code scope="custom:ALL">
+<![CDATA[
+ 
+	
+	   
+import com.infy.finacle.ui.form.FinForm;
+import com.infy.finacle.ui.usecase.FinUseCase;
+import com.infy.finacle.ui.components.base.*;
+import com.infy.finacle.ui.components.domain.*;
+import com.infy.finacle.ui.components.generic.*;	    
+public class aoaRes extends FinForm 
+{
+		//@@BEGIN_USER_DEFINED_FUNCTIONS
+	//@@END_USER_DEFINED_FUNCTIONS
+}]]>
+</code>
+</form>

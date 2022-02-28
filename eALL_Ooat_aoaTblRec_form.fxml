@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form id="aoaTblRec">
+	<properties>
+		<finDataProviderId>acctLblGrid</finDataProviderId>
+		<finLayout>vertical</finLayout>
+		<finPageRecTitleType>page_num</finPageRecTitleType>
+		<finPageSummaryGridId>acctLabelRec</finPageSummaryGridId>
+		<finTitle>FSH000718</finTitle>	<!-- Record Details -->
+		<finType wbprotected="true">pagerec</finType>
+	</properties>
+	<events>
+		<validateForm/>
+	</events>
+	<sectiongroup id="ss_pageRec">
+		<properties>
+			<finLayout>vertical</finLayout>
+			<finType wbprotected="true">pagerec</finType>
+		</properties>
+		<section id="aoaTblRec_finSection1" wbprotected="true">
+			<properties>
+				<finCollapsible wbprotected="true">false</finCollapsible>
+				<finExpand wbprotected="true">true</finExpand>
+				<finProgressiveDisclosure wbprotected="true">false</finProgressiveDisclosure>
+			</properties>
+			<subsection id="aoaTblRec_finSubSection1" wbprotected="true">
+				<row id="finRow1" wbprotected="true">
+					<cell id="finCell1" wbprotected="true">
+						<FinTextInputWithSearcher id="acctLabel" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinAccountLabel</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT001203</finLabel>	<!-- A/c. Label -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finTextAlign wbprotected="true">left</finTextAlign>
+								<finVisible wbprotected="true">true</finVisible>
+							</properties>
+							<events>
+								<onChange/>
+							</events>
+						</FinTextInputWithSearcher>
+					</cell>
+					<cell id="finCell2" wbprotected="true">
+						<FinTextInput id="valofLabel" wbprotected="true">
+							<properties>
+								<finDomainType wbprotected="true">FinValueOfLabel</finDomainType>
+								<finEditable wbprotected="true">true</finEditable>
+								<finLabel wbprotected="true">FLT002256</finLabel>	<!-- Label Value -->
+								<finMandatory wbprotected="true">false</finMandatory>
+								<finVisible wbprotected="true">false</finVisible>
+							</properties>
+						</FinTextInput>
+					</cell>
+				</row>
+				<row id="finRow2" wbprotected="true">
+					<cell id="finCell5" wbprotected="true" colspan="2">
+						<FinText id="cookieFld" wbprotected="true">
+							<properties>
+								<finDataType wbprotected="true">string</finDataType>
+								<finLabel wbprotected="true">FLT001817</finLabel>	<!-- Code -->
+								<finVisible wbprotected="true">false</finVisible>
+							</properties>
+						</FinText>
+					</cell>
+				</row>
+			</subsection>
+		</section>
+		<footer wbprotected="true">
+			<left wbprotected="true">
+			</left>
+			<right wbprotected="true">
+			</right>
+		</footer>
+		<hidden wbprotected="true">
+		</hidden>
+	</sectiongroup>
+<code>
+<![CDATA[
+import com.infy.finacle.ui.form.FinForm;
+import com.infy.finacle.ui.usecase.FinUseCase;
+import com.infy.finacle.ui.components.base.*;
+import com.infy.finacle.ui.components.domain.*;
+import com.infy.finacle.ui.components.generic.*;
+public class aoaTblRec extends FinForm 
+{
+	private FinTextInputWithSearcher acctLabel;
+	private FinTextInput valofLabel;
+	private FinText cookieFld;
+
+
+	
+	public boolean aoaTblRec_validateForm()
+	{
+		//@@BEGIN_aoaTblRec_validateForm
+		//TODO:Add code here
+		thisForm.clearError();
+		
+		if(acctLabel.finText == "")
+		{
+			acctLabel.setError($L("FER000568"));        
+			return false;  
+		}
+		
+			FinDataProvider dp = getDataProviderId ("acctLblGrid");
+        for(int i=0;i<dp.getSize();i++)
+        {
+        	if((i!=acctLabelRec.finSelectedIndex) && (dp.getColValue(i,"delFlg")!="Y"))          
+        	{  
+            if(dp.getColValue(i,"acctLabel")==acctLabel.finText)
+                {        
+                acctLabel.setError($L("FER001213"));   
+                return false;
+                }      
+                }
+        }    
+                  
+			
+		FinDataProvider dp = getDataProviderId ("acctLblGrid");
+			acctLabelRec.finMessageText = getFormattedMessage($L("FMG000207"),String(dp.getSize()+1));
+			return true;
+		//@@END_aoaTblRec_validateForm
+	}
+	
+	
+	public void acctLabel_onChange()
+	{
+		//@@BEGIN_acctLabel_onChange
+		//TODO:Add code here
+		valofLabel.finText = acctLabel.finDescription ;  
+		//@@END_acctLabel_onChange
+	}
+	
+	
+	
+	//@@BEGIN_USER_DEFINED_FUNCTIONS
+	private FinText hid_cookieFld;
+	//@@END_USER_DEFINED_FUNCTIONS
+
+}]]>
+</code>
+<code scope="custom:ALL">
+<![CDATA[
+]]>
+</code>
+</form>
